@@ -40,6 +40,8 @@ class PoemsController < ApplicationController
   # PATCH/PUT /poems/1
   # PATCH/PUT /poems/1.json
   def update
+    @poem = Poem.find(params[:id])
+
     respond_to do |format|
       if @poem.update(poem_params)
         format.html { redirect_to @poem, notice: 'Poem was successfully updated.' }
